@@ -8,7 +8,8 @@ router.get('/',(req,res)=>{
 })
 gastosController.getGastos= async(req, res)=>
 {
- res.json(Gasto);
+  const gastos= await Gasto.find();
+  res.json(gastos);
 }
 
 gastosController.createGastos= async(req,res)=>{
